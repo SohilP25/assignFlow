@@ -89,8 +89,8 @@ class Assignment {
   delete = async (assignment_id, assigned_by_id) => {
     try {
       const deleteAttachmentQuery = `
-             DELETE FROM attachments WHERE attachment_id IN (
-                SELECT attachment_id FROM assignments WHERE assignment_id = "${assignment_id}"
+             DELETE FROM Attachments WHERE attachment_id IN (
+                SELECT attachment_id FROM Assignments WHERE assignment_id = "${assignment_id}"
         );
           `;
       await Query(deleteAttachmentQuery); // Delete associated attachments first

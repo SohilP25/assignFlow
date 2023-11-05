@@ -49,8 +49,10 @@ class ResourceFeed{
             WHERE user_id = "${id}"; 
             `;
             const data = await Query(query);
-            console.log("checkTeacher",data[0].role);
+            if(data.length > 0)
             return data[0].role;
+            else
+            return 0;
           } catch (error) {
               console.log("Error in getAssignmentOfTeacher query : ",error.message);
               throw error;

@@ -17,7 +17,7 @@ class ResourceFeedController{
               success: false,
               message: "You do not have permission to access this assignments.",
               data: {},
-            });
+            }); 
           } 
           const data = await this.resourceFeed.getAssignmentOfStudent (studentId);
           res.status(200).json({

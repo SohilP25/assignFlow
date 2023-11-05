@@ -15,54 +15,7 @@ class Submission {
       throw error;
     }
   };
-
-  //   update = async (id, assignmentData) => {
-  //     try {
-  //       let query = `UPDATE Assignments SET `;
-  //       const updateValues = [];
-
-  //       for (const key in assignmentData) {
-  //         if (assignmentData.hasOwnProperty(key)) {
-  //           updateValues.push(`${key} = "${assignmentData[key]}"`);
-  //         }
-  //       }
-
-  //       query += updateValues.join(", ");
-  //       query += ` WHERE assignment_id = '${id}'`;
-
-  //       console.log(query);
-
-  //       const data = await Query(query);
-  //       return data.affectedRows > 0;
-  //     } catch (error) {
-  //       console.log("Error in Updating assignment query : ", error.message);
-  //       throw error;
-  //     }
-  //   };
-
-  //   delete = async (assignment_id, assigned_by_id) => {
-  //     try {
-  //     //   const getAttachmentId = await this.findById(assignment_id);
-  //     //   const attachment_id = getAttachmentId[0].attachment_id;
-  //       // console.log("getattchmentId : ",getAttachmentId[0].attachment_id);
-  //       const deleteAttachmentQuery = `
-  //              DELETE FROM attachments WHERE attachment_id IN (
-  //                 SELECT attachment_id FROM assignments WHERE assignment_id = "${assignment_id}"
-  //         );
-  //           `;
-  //       await Query(deleteAttachmentQuery); // Delete associated attachments first
-
-  //       const deleteAssignmentQuery = `
-  //             DELETE FROM Assignments WHERE assignment_id = "${assignment_id}" AND assigned_by = "${assigned_by_id}";
-  //           `;
-  //       const data = await Query(deleteAssignmentQuery);
-  //       return data.affectedRows > 0;
-  //     } catch (error) {
-  //       console.log("Error in Deleting assignment query : ", error.message);
-  //       throw error;
-  //     }
-  //   };
-
+  
   findById = async (submit_id) => {
     try {
       const query = `

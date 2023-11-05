@@ -22,7 +22,7 @@ class User {
   findOneUser = async (username) => {
     try {
       let query = `
-                            SELECT * FROM users WHERE username = "${username}";
+                            SELECT * FROM Users WHERE username = "${username}";
                         `;
       const data = await Query(query);
 

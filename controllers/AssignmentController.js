@@ -26,13 +26,14 @@ class AssignmentController {
         }
 
         let teacherData = await this.user.findById(req.user_id);
-        if (teacherData[0].role == "0") {
+        console.log(teacherData);
+        if (teacherData.length == 0 || teacherData[0].role == "0") {
           return res.status(403).json({
             success: false,
             message: "You do not have permission to create the assignment",
             data: {},
           });
-        }
+        } 
 
         let attachment_data,
           attachment_type = req.body.type;
@@ -85,7 +86,7 @@ class AssignmentController {
     try {
       const teacherData = await this.user.findById(req.user_id);
       console.log("teacherData", teacherData);
-      if (teacherData[0].role == "0") {
+      if (teacherData.length == 0 || teacherData[0].role == "0") {
         return res.status(403).json({
           success: false,
           message: "You do not have permission to get the assignments",

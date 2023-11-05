@@ -1,12 +1,4 @@
 import Query from "../helper/queryHelper.js";
-/*
-
-	Attachments Table :
-		attachment_id
-		attachment_type - image, url, Video, PDF
-		attachment_data
-    attachment_id attachment_type	attachment_data	
-*/
 
 class Attachment {
   create = async (attachment_id, attachment_type, attachment_data) => {
@@ -18,12 +10,12 @@ class Attachment {
       const data = await Query(query);
       return data.affectedRows > 0;
     } catch (error) {
-        console.log("Error in Creating attachment query : ",error.message);
-        throw error;
+      console.log("Error in Creating attachment query : ", error.message);
+      throw error;
     }
   };
 
-  update = async(attachment_id, attachment_data, attachment_type) => {
+  update = async (attachment_id, attachment_data, attachment_type) => {
     try {
       const query = `
         UPDATE Attachments 
@@ -34,11 +26,10 @@ class Attachment {
       const data = await Query(query);
       return data.affectedRows > 0;
     } catch (error) {
-      console.log("Error in Updating attachment query : ",error.message);
+      console.log("Error in Updating attachment query : ", error.message);
       throw error;
     }
-  }
-
+  };
 }
 
 export default Attachment;
